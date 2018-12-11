@@ -1,11 +1,9 @@
 const express = require('express')
 const proxy = require('http-proxy-middleware')
 
-// target
-const target = 'http://localhost:4444'
-// proxy
-const address = 'localhost'
-const port = '8999'
+const target = process.env.TARGET || 'http://localhost:4444'
+const address = process.env.ADDRESS || 'localhost'
+const port = process.env.PORT || '8999'
 
 const app = express()
 
